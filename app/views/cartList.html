@@ -1,8 +1,8 @@
 <h3><span class="glyphicon glyphicon-shopping-cart">我的购物车</span></h3>
 
-
-<!-- <div class="panel panel-default" ng-show="drinks"  ng-repeat="category in categories">
-    <div class="panel-heading text-center">{{category}}</div>
+<div  ng-show="cartGoods"  ng-repeat="cartGood in cartGoods">
+<div class="panel panel-default" ng-show="cartGood.boughtgoods">
+    <div class="panel-heading text-center">{{cartGood.categoryName}}</div>
     <div class="panel-body">
         <div class="row text-center">
             <div class="col-md-2"></div>
@@ -13,7 +13,7 @@
             <div class="col-md-2"><label>小计</label></div>
             <div class="col-md-1"><label>删除</label></div>
         </div>
-        <div class="row text-center" ng-repeat="cartItem in cartItems">
+        <div class="row text-center" ng-repeat="cartItem in cartGood.boughtgoods" >
             <div class="col-md-2"></div>
 
             <div class="col-md-2"><span id="cart_1_name">{{cartItem.item.name}}</span></div>
@@ -33,8 +33,9 @@
             <div class="col-md-1"><button class="delete_button_'+group+'"><span name="cart_everyRemove" class="glyphicon glyphicon-trash" ></span></button></div>
         </div>
     </div>
-</div> -->
-
+</div>
+</div>
+<!-- 
 <div class="panel panel-default" ng-show="drinks">
     <div class="panel-heading text-center">饮料类</div>
     <div class="panel-body">
@@ -59,7 +60,7 @@
                     </span>
                     <span class="form-control show_num">{{drink.num}}</span>
                     <span class="input-group-btn">
-                        <button class="btn btn-default up_button" type="button" ng-click="upCartItemNum(drink, drink.num)">+</button>
+                        <button class="btn btn-default up_button" type="button" ng-click="upCartItemNum(drink)">+</button>
                     </span>
                 </div>
             </div>
@@ -136,15 +137,15 @@
             <div class="col-md-1"><button class="delete_button_'+group+'"><span name="cart_everyRemove" class="glyphicon glyphicon-trash" ></span></button></div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="row text-left">
-            <div class="col-md-2 col-md-offset-8 cart_list_num"><label>数量：<span id="cart_nums"></span></label></div>
+            <div class="col-md-2 col-md-offset-8 cart_list_num"><label>{{'数量：'+ totalNumber}}</label></div>
         </div>
         <div class="row">
-            <div class="col-md-2 col-md-offset-8 cart_list_account"><label>合计：<span id="cart_total"></span></label></div>
+            <div class="col-md-2 col-md-offset-8 cart_list_account"><label>{{'合计：'+ totalMoney}}<span id="cart_total"></span></label></div>
         </div>
         <div class="text-right">
             <span>

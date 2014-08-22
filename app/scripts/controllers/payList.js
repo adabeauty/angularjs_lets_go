@@ -15,6 +15,9 @@ angular.module('letGoApp')
 
         Localstorage.setLocalstorage("boughtGoods",0);
         Localstorage.setLocalstorage("clickcount", 0);
+        Localstorage.setLocalstorage("drinks", 0);
+        Localstorage.setLocalstorage("snacks", 0);
+        Localstorage.setLocalstorage("nuts", 0);
         $scope.$parent.clickcount = 0;
     }
   });
